@@ -1,0 +1,12 @@
+#pragma METAINFO("timecount", 1, 0, "<author_name>")
+
+main {
+	
+	if(togle_check == 1) {
+	time_counter += elapsed_time
+	if(time_counter > 1000) {
+		time_counter = 0;
+		togle_check = 0;
+		}
+
+}

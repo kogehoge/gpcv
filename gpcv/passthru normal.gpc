@@ -1,0 +1,21 @@
+#pragma METAINFO("USB-HID Defo", 1,0 , "musasi")
+
+#include <mouse.gph>
+
+init {
+
+	keymapping();
+   	mousemapping();
+}
+
+main {
+    key_passthru();
+    mouse_passthru();
+    if(mouse_status(MBUTTON_3)){
+		combo_run(toglemslot);
+		}	
+	}
+combo toglemslot{
+	wait(300);
+	mslot_load(1);
+	}

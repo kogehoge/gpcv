@@ -1,0 +1,49 @@
+#pragma METAINFO("KARATAKEWARI", 1,0 , "musasi")
+#include <mouse.gph>
+int32 x = 0;
+int pm = 0;
+int time_counter = 0;
+bool togle_check = 0;
+init {
+	
+	keymapping();
+   	mousemapping();
+}
+
+main {
+ 	key_passthru();
+    mouse_passthru();
+	
+	//block waste input
+	if(togle_check == 1) {
+		time_counter += elapsed_time();
+	    if(time_counter > 100) {
+			time_counter = 0;
+			togle_check = 0;
+		    }
+		}
+    if(togle_check == 0) {
+	    if(is_release(MBUTTON_1)) {	
+		    if(gcv_ready()){ 
+				gcv_read(0, &x);
+				if(x < -2 || x > 2){
+				    printf("gpc  = %d", x);
+				    mouse_set(MOUSE_X, x);
+				    togle_check = 1;
+				    }
+				}
+			}   
+		}
+
+	
+    if(mouse_status(MBUTTON_3)) {
+		combo_run(toglemslot);
+		}
+	}
+
+	
+combo toglemslot {
+	wait(300);
+	mslot_load(2);
+	}
+	}

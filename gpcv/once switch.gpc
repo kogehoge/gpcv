@@ -1,0 +1,13 @@
+	if(mouse_status(MBUTTON_5)){
+		pm = pmem_read(0);
+		if(pm == 0){
+			mouse_set(MOUSE_X, -2253);
+			pmem_write(0, 1);
+			pmem_save();
+		    }
+		}
+	
+    else if(is_release(MBUTTON_5)){
+	    pmem_write(0,0);
+		pmem_save();
+		}

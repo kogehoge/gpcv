@@ -1,0 +1,16 @@
+gtunerをいれてうごかす
+python version は3.8が最適で他は動かなかった
+python リンク
+https://www.python.org/ftp/python/3.8.2/python-3.8.2-amd64.exe
+
+
+https://watlab-blog.com/2020/06/14/numba-jit/ numbaでfor文高速化
+できなかった　する意味ない　費用対効果
+
+
+必要 pip
+
+pip install opencv-python==4.5.4.60
+pip install pywin32
+
+gtuner用言語はdiscordに説明リンク
